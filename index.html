@@ -6,12 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue</title>
   <script src="https://unpkg.com/vue@next"></script>
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="">-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
   <div id="app">
     <h1>{{titulo}}</h1>
-    <p>cantidad : {{cantidad}}</p>
+		<p 
+    class="bg-dark"
+    :class="[cantidad > 500 ? 'text-success' : 'text-danger']"
+    :style="{'font-size': '50px'}"
+		>
+    	Mi saldo disponible es: {{cantidad}}
+	</p>
+    <!--<p>cantidad : {{cantidad}}</p>-->
     <p>{{cantidad>= 1000 ? "Es mayor o igual a mil" : "Es menor que mil"}}</p>
+
     <a v-bind:href="enlace ">ir a google</a>
 
     <h2 v-if="estado">Cuenta activa</h2>

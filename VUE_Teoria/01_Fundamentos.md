@@ -145,7 +145,7 @@ const app = Vue.createApp({
     }
 })
 
-#Class dinámico
+# Class dinámico
 <!-- operador ternario -->
 <h2 
     class="bg-dark"
@@ -154,6 +154,8 @@ const app = Vue.createApp({
 >
     Cantidad: {{cantidad}}
 </h2>
+
+
 #Computed
 Las propiedades computadas nos sirven para generar calculos en nuestros componentes, por ejemplo no se recomienda colocar demasiada lógica en nuestras plantillas HTML, ya que dificulta la interpretación de nuestros componentes.
 
