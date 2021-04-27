@@ -123,12 +123,11 @@ Podemos recorrer array y array de objetos con directivas de Vue: v-for
   </ul>
 
 
-# v-on:click [Eventos]
+# v-on:click [Eventos]     @onclick
 Agreguemos un evento que nos permita modificar la cantidad o saldo de nuestra cuenta:
 
 <button v-on:click="agregarSaldo">Agregar Saldo</button>
 Abreviado:
-
 <button @click="agregarSaldo">Agregar Saldo</button>
 const app = Vue.createApp({
     data() {
@@ -145,35 +144,7 @@ const app = Vue.createApp({
         }
     }
 })
-#Práctica
-Vamos a repasar lo aprendido con el botón disminuir:
 
-<button v-on:click="disminuirSaldo" :disabled="desactivar">Disminuir Saldo</button>
-const app = Vue.createApp({
-    data() {
-        return {
-            cuenta: 'Vista',
-            cantidad: 0,
-            estado: true,
-            servicios: ['Transferencias', 'Pagos', 'Giros'],
-            desactivar: false
-        }
-    },
-    methods: {
-        agregarSaldo() {
-            this.cantidad = this.cantidad + 100
-            this.desactivar = false
-        },
-        disminuirSaldo() {
-            if (this.cantidad === 0) {
-                alert('llegaste al final')
-                this.desactivar = true
-                return
-            }
-            this.cantidad = this.cantidad - 100
-        }
-    }
-})
 #Class dinámico
 <!-- operador ternario -->
 <h2 

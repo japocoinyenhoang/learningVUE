@@ -17,12 +17,12 @@
     <h2 v-if="estado">Cuenta activa</h2>
     <h2 v-else>Cuenta Desactivada</h2>
 
-    <h2 v-if="cantidad > 500">Cantidad: {{cantidad}}</h2>
-    <h2 v-else-if="cantidad = 500 && cantidad > 0"> 
+    <!--<h2 v-if="cantidad > 500">Cantidad: {{cantidad}}</h2>
+    <h2 v-else-if="cantidad = 500"> 
       Cantidad: 
       <span style="color:red">{{cantidad}}</span>
     </h2>
-    <h2 v-else>Sin cantidad: {{cantidad}}</h2>
+    <h2 v-else>Sin cantidad: {{cantidad}}</h2>-->
 
     <hr>
   <h2>Servicios disponibles:</h2>
@@ -31,12 +31,14 @@
   </ul>
 
   <ul>
-      <li 
-      v-for="(item, index) in servicios" :key="index"
-      >
+      <li v-for="(item, index) in servicios" :key="index">
           {{index + 1}} - {{item}}
       </li>
   </ul>
+	<h2>Mi saldo disponible es: {{cantidad}}</h2>
+
+<button @click="agregarSaldo">Agregar Saldo</button>
+<button @click="disminuirSaldo" :disabled="desactivar">Disminuir Saldo</button>
 
   </div>
   <script src ="main.js"></script>
